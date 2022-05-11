@@ -22,14 +22,17 @@ int main() {
     // process & output
     try {
         number = std::stoi(intNumber);
-        while (counter < number) {
-            counter = counter + 1;
-            sum = sum + counter;
+        if (number > 0) {
+            for (int counter = 0; counter < number + 1; counter++) {
+                sum = counter * counter;
+                std::cout << counter << "² = " << sum << std::endl;
+            }
+        } else {
+            std::cout << "Not a positive number" << std::endl;
         }
-        std::cout << "The sum of numbers to "
-        << number << " is " << sum << std::endl;
     } catch (std::invalid_argument) {
-        std::cout << "Not an integer";
+        std::cout << "Not a number";
     }
     std::cout << "\nDone." << std::endl;
 }
+
